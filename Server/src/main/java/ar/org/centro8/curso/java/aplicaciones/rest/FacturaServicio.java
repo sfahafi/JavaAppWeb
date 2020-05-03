@@ -65,7 +65,8 @@ public class FacturaServicio {
 //    public String getLikeCliente(@QueryParam("id") String id){
 //        String text="";
 //        FacturaRepository fr = new FacturaRepository(Connector.getConnection());
-//        for(Factura f: fr.getByIdCliente(String.valueOf(id)) text += f +"\n";
+//        for(Factura f: fr.getByIdCliente(Integer.parseInt(id))) 
+//            text += f +"\n";
 //        return text;
 //    }
     

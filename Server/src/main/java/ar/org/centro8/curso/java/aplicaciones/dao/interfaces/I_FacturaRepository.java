@@ -43,12 +43,13 @@ public interface I_FacturaRepository {
                 .orElse(new Factura());
     }
     
-//    default List<Factura> getByIdCliente(int id){
-//        return getAll()
-//                .stream()
-//                .filter(f -> f.getIdCliente() == id)
-//                .collect(Collectors.toList());
-//                
-//    }
-    
+    default Factura getByIdCliente(int id){
+        return getAll()
+                .stream()
+                .filter(f -> f.getIdCliente() == id)
+                .findFirst()
+                .orElse(new Factura());
+                
+    }
+     
 }
