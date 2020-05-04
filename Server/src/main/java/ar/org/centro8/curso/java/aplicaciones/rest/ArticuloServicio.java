@@ -50,7 +50,7 @@ public class ArticuloServicio {
     
     @GET
     @Path("all")
-    public String all(){
+    public String getAll(){
         String text = "";
         ArticuloRepository ar = new ArticuloRepository(Connector.getConnection());
         for(Articulo a: ar.getAll()) text += a +"\n";
@@ -62,7 +62,7 @@ public class ArticuloServicio {
     public String getLikeDescripcion(@QueryParam("descripcion") String descripcion){
         String text="";
         ArticuloRepository ar=new ArticuloRepository(Connector.getConnection());
-        for(Articulo a: ar.getByDescripcion(descripcion)) text+=a+"\n";
+        for(Articulo a: ar.getLikeDescripcion(descripcion)) text+=a+"\n";
         return text;
     }
     

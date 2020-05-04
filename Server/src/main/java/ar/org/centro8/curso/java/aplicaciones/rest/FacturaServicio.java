@@ -41,10 +41,13 @@ public class FacturaServicio {
     
     @GET
     @Path("baja")
-    public String baja(@QueryParam("id") String id){
+    public String baja(
+            @QueryParam("letra") String letra,
+            @QueryParam("numero") String numero
+    ){
         try {
             FacturaRepository fr = new FacturaRepository(Connector.getConnection());
-            fr.remove(fr.getById(Integer.parseInt(id)));
+            fr.remove(fr.getByLetraNumero(Letra.valueOf(letra), Integer.parseInt(numero)));
             return "true";
         } catch (Exception e) {
             return "false";
@@ -53,22 +56,21 @@ public class FacturaServicio {
     
     @GET
     @Path("all")
-    public String all(){
+    public String getAll(){
         String text = "";
         FacturaRepository fr = new FacturaRepository(Connector.getConnection());
         for(Factura f: fr.getAll()) text += f +"\n";
         return text;
     }
     
-//    @GET
-//    @Path("getLikeCliente")
-//    public String getLikeCliente(@QueryParam("id") String id){
-//        String text="";
-//        FacturaRepository fr = new FacturaRepository(Connector.getConnection());
-//        for(Factura f: fr.getByIdCliente(Integer.parseInt(id))) 
-//            text += f +"\n";
-//        return text;
-//    }
+    @GET
+    @Path("getLikeCliente")
+    public String getLikeCliente(@QueryParam("id") String id){
+        String text="";
+        FacturaRepository fr = new FacturaRepository(Connector.getConnection());
+        for(Factura f: fr.getByIdCliente(Integer.parseInt(id))) text += f +"\n";
+        return text;
+    }
     
     
 }

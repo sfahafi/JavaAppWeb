@@ -7,15 +7,14 @@ public interface I_DetalleRepository {
     void update(Detalle detalle);
     List<Detalle>getAll();
     
-    
-    /*
-   
-List<Detalle> getByPrecio(float precio);
 
-Detalle getByFacturaArticulo(int idFactura,int idArticulo)
-
-    */
-    
+    default Detalle getByIdDetalle(int idFactura , int idArticulo){
+        return getAll()
+                .stream()
+                .filter(d -> d.getIdFactura() == idFactura && d.getIdArticulo() == idArticulo)
+                .findFirst()
+                .orElse(new Detalle());
+    }
     
     default Detalle getByIdFactura(int id){
         return getAll()
@@ -33,7 +32,7 @@ Detalle getByFacturaArticulo(int idFactura,int idArticulo)
                 .orElse(new Detalle());
     }
     
-    default Detalle getByPrecio(float precio){
+    default Detalle getLikePrecio(float precio){
         return getAll()
                 .stream()
                 .filter(d -> d.getPrecio() == precio)
@@ -41,7 +40,7 @@ Detalle getByFacturaArticulo(int idFactura,int idArticulo)
                 .orElse(new Detalle());
     }
     
-    default Detalle getByCantidad(int cantidad){
+    default Detalle getLikeCantidad(int cantidad){
         return getAll()
                 .stream()
                 .filter(d -> d.getCantidad() == cantidad)

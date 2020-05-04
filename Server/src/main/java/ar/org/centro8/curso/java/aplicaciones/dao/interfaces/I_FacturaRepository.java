@@ -21,13 +21,12 @@ public interface I_FacturaRepository {
     default Factura getByLetraNumero(Letra letra, int numero){
         return getAll()
                 .stream()
-                .filter(f -> f.getLetra() == letra
-                    && f.getNumero() == numero)
+                .filter(f -> f.getLetra() == letra && f.getNumero() == numero)
                 .findFirst()
                 .orElse(new Factura());
     }
     
-    default List<Factura> getByFecha(String fecha){
+    default List<Factura> getLikeFecha(String fecha){
         if (fecha == null) return new ArrayList<Factura>();
         return getAll()
                 .stream()
@@ -35,7 +34,7 @@ public interface I_FacturaRepository {
                 .collect(Collectors.toList());
     }
     
-    default Factura getByMonto(double monto){
+    default Factura getLikeMonto(double monto){
         return getAll()
                 .stream()
                 .filter(f -> f.getMonto() == monto)
@@ -43,12 +42,11 @@ public interface I_FacturaRepository {
                 .orElse(new Factura());
     }
     
-    default Factura getByIdCliente(int id){
+    default List<Factura> getByIdCliente(int id){
         return getAll()
                 .stream()
                 .filter(f -> f.getIdCliente() == id)
-                .findFirst()
-                .orElse(new Factura());
+                .collect(Collectors.toList());
                 
     }
      

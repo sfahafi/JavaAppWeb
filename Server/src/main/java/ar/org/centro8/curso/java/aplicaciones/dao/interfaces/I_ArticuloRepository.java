@@ -17,7 +17,7 @@ public interface I_ArticuloRepository {
                 .orElse(new Articulo());
     }
     
-    default List<Articulo> getByDescripcion(String descripcion){
+    default List<Articulo> getLikeDescripcion(String descripcion){
         if (descripcion == null) return new ArrayList<Articulo>();
         return getAll()
                 .stream()
@@ -25,7 +25,7 @@ public interface I_ArticuloRepository {
                 .collect(Collectors.toList());
     }
     
-    default Articulo getByCosto(float costo){
+    default Articulo getLikeCosto(float costo){
         return getAll()
                 .stream()
                 .filter(a -> a.getCosto() == costo)
@@ -33,7 +33,7 @@ public interface I_ArticuloRepository {
                 .orElse(new Articulo());
     }
     
-    default Articulo getByPrecio(float precio){
+    default Articulo getLikePrecio(float precio){
         return getAll()
                 .stream()
                 .filter(a -> a.getPrecio() == precio)
@@ -41,7 +41,7 @@ public interface I_ArticuloRepository {
                 .orElse(new Articulo());
     }
     
-    default Articulo getByStock(int stock){
+    default Articulo getLikeStock(int stock){
         return getAll()
                 .stream()
                 .filter(a -> a.getStock() == stock)
@@ -49,7 +49,7 @@ public interface I_ArticuloRepository {
                 .orElse(new Articulo());
     }
     
-    default Articulo getByStockMin(int stockMin){
+    default Articulo getLikeStockMin(int stockMin){
         return getAll()
                 .stream()
                 .filter(a -> a.getStockMin() == stockMin)
@@ -57,7 +57,7 @@ public interface I_ArticuloRepository {
                 .orElse(new Articulo());
     }
     
-    default Articulo getByStockMax(int stockMax){
+    default Articulo getLikeStockMax(int stockMax){
         return getAll()
                 .stream()
                 .filter(a -> a.getStockMax() == stockMax)
