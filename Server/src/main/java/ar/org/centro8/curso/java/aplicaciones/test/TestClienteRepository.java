@@ -25,12 +25,12 @@ public class TestClienteRepository {
             
             System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");
             
-//            cliente = (Cliente) cr.getLikeNombreApellido("juan", "sosa"); 
-//            System.out.println("cliente = " + cliente);
-//            cliente.setNombre("Pedro");
-//            cliente.setApellido("Suarez");
-//            cr.update(cliente);
-//            System.out.println("cliente = " + cliente);            
+            cliente = (Cliente)cr.getLikeNombreApellido("juan", "sosa"); 
+            System.out.println("cliente = " + cliente);
+            cliente.setNombre("Pedro");
+            cliente.setApellido("Suarez");
+            cr.update(cliente);
+            System.out.println("cliente = " + cliente);            
             
             System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");
                        

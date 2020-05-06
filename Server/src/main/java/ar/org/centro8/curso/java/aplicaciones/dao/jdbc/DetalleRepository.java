@@ -25,7 +25,7 @@ public class DetalleRepository implements I_DetalleRepository{
             ps.setInt(4, detalle.getCantidad());
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
-            //if (rs.next()) detalle.set            
+            if (rs.next()) detalle.setIdFactura(rs.getInt(1));
         } catch (Exception e) { e.printStackTrace(); }
     }
 
@@ -33,8 +33,12 @@ public class DetalleRepository implements I_DetalleRepository{
     public void remove(Detalle detalle) {
         if(detalle == null) return;
         try (PreparedStatement ps = conn.prepareStatement(
-                "delete from detalles where id=?")
+                "delete from detalles where idFactura=? and idArticulo=?")
             ){
+            
+            ps.setInt(1, detalle.getIdFactura());
+            ps.setInt(2, detalle.getIdArticulo());
+            ps.execute();
             
         } catch (Exception e) { e.printStackTrace(); }
     }
@@ -43,8 +47,14 @@ public class DetalleRepository implements I_DetalleRepository{
     public void update(Detalle detalle) {
         if(detalle == null) return;
         try (PreparedStatement ps = conn.prepareStatement(
-                "update detalles set  where id=?")
+                "update detalles set precio=?, cantidad=? where idFactura=? and idArticulo=?")
             ){
+            
+            ps.setFloat(1, detalle.getPrecio());
+            ps.setInt(2, detalle.getCantidad());
+            ps.setInt(3, detalle.getIdFactura());
+            ps.setInt(4, detalle.getIdArticulo());
+            ps.execute();
             
         } catch (Exception e) { e.printStackTrace(); }
     }
@@ -58,7 +68,10 @@ public class DetalleRepository implements I_DetalleRepository{
             
             while (rs.next()){
                 list.add(new Detalle(
-                        
+                    rs.getInt("idFactura"),
+                    rs.getInt("idArticulo"),
+                    rs.getFloat("precio"),
+                    rs.getInt("cantidad")
                 ));
             }            
         } catch (Exception e) { e.printStackTrace(); }
