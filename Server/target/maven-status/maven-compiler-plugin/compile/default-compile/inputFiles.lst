@@ -1,21 +1,24 @@
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\entities\Articulo.java
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\enumerados\TipoDocumento.java
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\interfaces\I_ArticuloRepository.java
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\jdbc\FacturaRepository.java
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\enumerados\Letra.java
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\interfaces\I_ClienteRepository.java
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\jdbc\DetalleRepository.java
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\test\TestDetalleRepository.java
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\test\TestClienteRepository.java
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\test\TestFacturaRepository.java
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\connectors\Connector.java
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\jdbc\ArticuloRepository.java
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\entities\Cliente.java
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\test\TestConnector.java
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\jdbc\ClienteRepository.java
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\entities\Detalle.java
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\entities\Factura.java
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\clase01\Clase01.java
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\interfaces\I_DetalleRepository.java
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\interfaces\I_FacturaRepository.java
-C:\Users\toro\Desktop\Pasar a PC\Java2020\Desarrollo APP WEB\Clase02SF\src\main\java\ar\org\centro8\curso\java\aplicaciones\test\TestArticuloRepository.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\jdbc\ArticuloRepository.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\interfaces\I_ClienteRepository.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\jdbc\ClienteRepository.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\entities\Articulo.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\rest\ClienteServicio.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\entities\Detalle.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\test\TestDetalleRepository.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\test\TestFacturaRepository.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\enumerados\Letra.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\rest\ArticuloServicio.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\rest\DetalleServicio.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\entities\Factura.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\interfaces\I_ArticuloRepository.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\connectors\Connector.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\jdbc\FacturaRepository.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\interfaces\I_FacturaRepository.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\jdbc\DetalleRepository.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\entities\Cliente.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\interfaces\I_DetalleRepository.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\test\TestArticuloRepository.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\test\TestClienteRepository.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\enumerados\TipoDocumento.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\rest\FacturaServicio.java
+C:\Users\Administrador\Downloads\Desarrollo app web\JavaAppWeb\Server\src\main\java\ar\org\centro8\curso\java\aplicaciones\test\TestConnector.java
