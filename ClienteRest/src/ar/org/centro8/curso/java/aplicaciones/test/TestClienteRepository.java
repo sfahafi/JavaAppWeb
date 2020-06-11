@@ -17,7 +17,7 @@ public class TestClienteRepository {
             
             System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");
             
-            Cliente cliente = new Cliente("Juan","Sosa",TipoDocumento.DNI,16127887,"Av._Tal","Hola");
+            Cliente cliente = new Cliente("Juan","Sosa",TipoDocumento.DNI,16127880,"Av._Tal","Hola");
             cr.save(cliente);
             System.out.println(cliente + "\nAgregado a la base");
             
