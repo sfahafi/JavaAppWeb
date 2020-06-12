@@ -12,7 +12,7 @@ public class TestClienteRepository {
             
 //            System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");
 //            
-//            cr.remove(cr.getByTipoNumero(TipoDocumento.DNI, 16777888));
+            cr.remove(cr.getById(49));
 //            System.out.println("Cliente con DNI: 16777888, eliminado !!!");
             
             System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");

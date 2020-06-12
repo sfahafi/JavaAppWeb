@@ -1,5 +1,6 @@
 package ar.org.centro8.curso.java.aplicaciones.test;
 import ar.org.centro8.curso.java.aplicaciones.dao.interfaces.I_FacturaRepository;
+import ar.org.centro8.curso.java.aplicaciones.dao.rest.cliente.FacturaRepository;
 import ar.org.centro8.curso.java.aplicaciones.entities.Factura;
 import ar.org.centro8.curso.java.aplicaciones.enumerados.Letra;
 public class TestFacturaRepository {
@@ -10,23 +11,23 @@ public class TestFacturaRepository {
             
             System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");
             
-            fr.remove(fr.getByLetraNumero(Letra.A, 1));
-            System.out.println("Factura eliminada !!!");
+            //fr.remove(fr.getById(30));
+            //System.out.println("Factura eliminada !!!");
                         
             System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");
             
-            Factura factura = new Factura(Letra.A, 1, "05/05/2018", 1400, 2);
-            fr.save(factura);
-            System.out.println(factura + "\nAgregada a la base");
+//            Factura factura = new Factura(Letra.A, 1, "05/05/2018", 1400, 2);
+//            fr.save(factura);
+//            System.out.println(factura + "\nAgregada a la base");
             
             System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");
             
-            factura = fr.getByLetraNumero(Letra.A, 1);
-            System.out.println("factura = " + factura);
-            factura.setFecha("06/07/2019");
-            factura.setMonto(2556.30);
-            fr.update(factura);
-            System.out.println("factura = " + factura);
+//            factura = fr.getByLetraNumero(Letra.A, 1);
+//            System.out.println("factura = " + factura);
+//            factura.setFecha("06/07/2019");
+//            factura.setMonto(2556.30);
+//            fr.update(factura);
+//            System.out.println("factura = " + factura);
             
             System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");
             

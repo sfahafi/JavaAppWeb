@@ -1,6 +1,7 @@
 package ar.org.centro8.curso.java.aplicaciones.dao.rest.cliente;
 import ar.org.centro8.curso.java.aplicaciones.dao.interfaces.I_ClienteRepository;
 import ar.org.centro8.curso.java.aplicaciones.entities.Cliente;
+import ar.org.centro8.curso.java.aplicaciones.enumerados.TipoDocumento;
 import java.util.List;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -40,7 +41,16 @@ public class ClienteRepository implements I_ClienteRepository{
 
     @Override
     public void remove(Cliente cliente) {
+        try {
         
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(uri+"baja?id="+cliente.getId())).build();
+
+            HttpResponse<String> response = client.send(request,
+                    HttpResponse.BodyHandlers.ofString());
+                                   
+        } catch (Exception e) { e.printStackTrace(); }
     }
 
     @Override
@@ -62,11 +72,29 @@ public class ClienteRepository implements I_ClienteRepository{
                     HttpResponse.BodyHandlers.ofString());
             
             String resp = response.body();           
-            System.out.println(resp);
+            //System.out.println(resp);
             
             String[] lines = resp.split("Cliente");
             for(String l:lines){
-                System.out.println(l);
+                int longitud = l.length();
+                if(longitud > 0){
+                    l = l.substring(1, longitud-2);
+                    //System.out.println(l);
+                    String[] campos = l.split(", ");
+//                    for(String c: campos){
+//                        System.out.println(c);
+//                    }
+                    list.add(new Cliente(
+                            Integer.parseInt(campos[0].substring(3)),
+                            campos[1].substring(7),
+                            campos[2].substring(9),
+                            TipoDocumento.valueOf(campos[3].substring(14)),
+                            Integer.parseInt(campos[4].substring(16)),
+                            campos[5].substring(10),
+                            campos[6].substring(12)
+                    ));
+                }
+                
             }
             
         } catch (Exception e) { e.printStackTrace(); }   
