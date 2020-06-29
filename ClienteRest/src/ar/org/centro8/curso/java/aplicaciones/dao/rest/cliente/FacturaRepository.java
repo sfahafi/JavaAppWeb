@@ -33,7 +33,7 @@ public class FacturaRepository implements I_FacturaRepository{
             HttpResponse<String> response = client.send(request,
                     HttpResponse.BodyHandlers.ofString());
             
-            factura.setId(Integer.parseInt(response.body()));
+            //factura.setId(Integer.parseInt(response.body()));
             
         } catch (Exception e) { e.printStackTrace(); }
     }
@@ -44,7 +44,9 @@ public class FacturaRepository implements I_FacturaRepository{
         
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(uri+"baja?id="+factura.getId())).build();
+                    .uri(URI.create(uri+"baja?letra="+factura.getLetra()
+                        +"&numero="+factura.getNumero()
+                    )).build();
 
             HttpResponse<String> response = client.send(request,
                     HttpResponse.BodyHandlers.ofString());

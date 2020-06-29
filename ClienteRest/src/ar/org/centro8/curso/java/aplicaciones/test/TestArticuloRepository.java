@@ -1,12 +1,19 @@
 package ar.org.centro8.curso.java.aplicaciones.test;
 import ar.org.centro8.curso.java.aplicaciones.dao.interfaces.I_ArticuloRepository;
+import ar.org.centro8.curso.java.aplicaciones.dao.rest.cliente.ArticuloRepository;
 import ar.org.centro8.curso.java.aplicaciones.entities.Articulo;
 public class TestArticuloRepository {
     public static void main(String[] args) {
         
         try {
             
-            I_ArticuloRepository ar = new ArticuloRepository("http://localhost:8080/Server/articulos/v1");
+            I_ArticuloRepository ar = new ArticuloRepository("http://localhost:8080/Server/articulos/v1/");
+            
+            System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");
+            
+            ar.remove(ar.getById(10));
+            
+            System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");
             
             Articulo articulo = new Articulo("Zapatos", 1200, 1500, 100, 5, 200);
             Articulo articulo2 = new Articulo("Remeras", 600, 800, 150, 10, 300);
@@ -22,9 +29,9 @@ public class TestArticuloRepository {
             
             System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");
             
-            // ar.remove(ar.getByDescripcion("p")); // Tengo problema con esta linea
-            
-            System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");
+//            ar.remove(ar.getById(10));
+//            
+//            System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");
             
            
             

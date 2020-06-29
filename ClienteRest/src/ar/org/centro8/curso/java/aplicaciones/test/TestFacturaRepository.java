@@ -7,18 +7,18 @@ public class TestFacturaRepository {
     public static void main(String[] args) {
         try {
             
-            I_FacturaRepository fr = new FacturaRepository("http://localhost:8080/Server/facturas/v1");
+            I_FacturaRepository fr = new FacturaRepository("http://localhost:8080/Server/facturas/v1/");
             
             System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");
             
-            //fr.remove(fr.getById(30));
-            //System.out.println("Factura eliminada !!!");
+            fr.remove(fr.getByLetraNumero(Letra.A, 25));
+            System.out.println("Factura eliminada !!!");
                         
             System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");
             
-//            Factura factura = new Factura(Letra.A, 1, "05/05/2018", 1400, 2);
-//            fr.save(factura);
-//            System.out.println(factura + "\nAgregada a la base");
+            Factura factura = new Factura(Letra.B, 25, "05/05/2018", 1400, 2);
+            fr.save(factura);
+            System.out.println(factura + "\nAgregada a la base");
             
             System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");
             
