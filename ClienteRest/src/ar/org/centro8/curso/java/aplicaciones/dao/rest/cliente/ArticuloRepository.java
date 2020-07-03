@@ -74,7 +74,7 @@ public class ArticuloRepository implements I_ArticuloRepository{
             String resp = response.body();           
             System.out.println(resp);
             
-//            String[] lines = resp.split("Factura");
+//            String[] lines = resp.split("Articulo");
 //            for(String l:lines){
 //                int longitud = l.length();
 //                if(longitud > 0){
@@ -84,7 +84,7 @@ public class ArticuloRepository implements I_ArticuloRepository{
 ////                    for(String c: campos){
 ////                        System.out.println(c);
 ////                    }
-//                    list.add(new Factura(
+//                    list.add(new Articulo(
 //                            Integer.parseInt(campos[0].substring(3)),
 //                            campos[1].substring(7),
 //                            campos[2].substring(9),

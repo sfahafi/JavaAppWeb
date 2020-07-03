@@ -11,7 +11,7 @@ public class TestArticuloRepository {
             
             System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");
             
-            ar.remove(ar.getById(10));
+            ar.remove(ar.getById(57));
             
             System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");
             
