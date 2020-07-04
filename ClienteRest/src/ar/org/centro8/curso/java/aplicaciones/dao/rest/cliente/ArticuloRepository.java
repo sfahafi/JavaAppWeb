@@ -72,30 +72,30 @@ public class ArticuloRepository implements I_ArticuloRepository{
                     HttpResponse.BodyHandlers.ofString());
             
             String resp = response.body();           
-            System.out.println(resp);
+            //System.out.println(resp);
             
-//            String[] lines = resp.split("Articulo");
-//            for(String l:lines){
-//                int longitud = l.length();
-//                if(longitud > 0){
-//                    l = l.substring(1, longitud-2);
-//                    //System.out.println(l);
-//                    String[] campos = l.split(", ");
-////                    for(String c: campos){
-////                        System.out.println(c);
-////                    }
-//                    list.add(new Articulo(
-//                            Integer.parseInt(campos[0].substring(3)),
-//                            campos[1].substring(7),
-//                            campos[2].substring(9),
-//                            TipoDocumento.valueOf(campos[3].substring(14)),
-//                            Integer.parseInt(campos[4].substring(16)),
-//                            campos[5].substring(10),
-//                            campos[6].substring(12)
-//                    ));
-//                }
-//                
-//            }
+            String[] lines = resp.split("Articulo");
+            for(String l:lines){
+                int longitud = l.length();
+                if(longitud > 0){
+                    l = l.substring(1, longitud-2);
+                    //System.out.println(l);
+                    String[] campos = l.split(", ");
+//                    for(String c: campos){
+//                        System.out.println(c);
+//                    }
+                    list.add(new Articulo(
+                            Integer.parseInt(campos[0].substring(3)),
+                            campos[1].substring(12),
+                            Float.parseFloat(campos[2].substring(6)),
+                            Float.parseFloat(campos[3].substring(7)),
+                            Integer.parseInt(campos[4].substring(6)),
+                            Integer.parseInt(campos[5].substring(9)),
+                            Integer.parseInt(campos[6].substring(9))
+                    ));
+                }
+                
+            }
             
         } catch (Exception e) { e.printStackTrace(); }   
         return list;

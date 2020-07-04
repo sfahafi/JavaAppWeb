@@ -11,12 +11,12 @@ public class TestFacturaRepository {
             
             System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");
             
-            fr.remove(fr.getByLetraNumero(Letra.A, 25));
+            fr.remove(fr.getByLetraNumero(Letra.B, 25));
             System.out.println("Factura eliminada !!!");
                         
             System.out.println("\n" + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + "\n");
             
-            Factura factura = new Factura(Letra.B, 25, "05/05/2018", 1400, 2);
+            Factura factura = new Factura(Letra.A, 27, "05/05/2018", 1400, 2);
             fr.save(factura);
             System.out.println(factura + "\nAgregada a la base");
             

@@ -1,6 +1,7 @@
 package ar.org.centro8.curso.java.aplicaciones.dao.rest.cliente;
 import ar.org.centro8.curso.java.aplicaciones.dao.interfaces.I_FacturaRepository;
 import ar.org.centro8.curso.java.aplicaciones.entities.Factura;
+import ar.org.centro8.curso.java.aplicaciones.enumerados.Letra;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -72,30 +73,29 @@ public class FacturaRepository implements I_FacturaRepository{
                     HttpResponse.BodyHandlers.ofString());
             
             String resp = response.body();           
-            System.out.println(resp);
+            //System.out.println(resp);
             
-//            String[] lines = resp.split("Factura");
-//            for(String l:lines){
-//                int longitud = l.length();
-//                if(longitud > 0){
-//                    l = l.substring(1, longitud-2);
-//                    //System.out.println(l);
-//                    String[] campos = l.split(", ");
-////                    for(String c: campos){
-////                        System.out.println(c);
-////                    }
-//                    list.add(new Factura(
-//                            Integer.parseInt(campos[0].substring(3)),
-//                            campos[1].substring(7),
-//                            campos[2].substring(9),
-//                            TipoDocumento.valueOf(campos[3].substring(14)),
-//                            Integer.parseInt(campos[4].substring(16)),
-//                            campos[5].substring(10),
-//                            campos[6].substring(12)
-//                    ));
-//                }
-//                
-//            }
+            String[] lines = resp.split("Factura");
+            for(String l:lines){
+                int longitud = l.length();
+                if(longitud > 0){
+                    l = l.substring(1, longitud-2);
+                    //System.out.println(l);
+                    String[] campos = l.split(", ");
+//                    for(String c: campos){
+//                        System.out.println(c);
+//                    }
+                    list.add(new Factura(
+                            Integer.parseInt(campos[0].substring(3)),
+                            Letra.valueOf(campos[1].substring(6)),
+                            Integer.parseInt(campos[2].substring(7)),
+                            campos[3].substring(6),
+                            Double.parseDouble(campos[4].substring(6)),
+                            Integer.parseInt(campos[5].substring(10))
+                    ));
+                }
+                
+            }
             
         } catch (Exception e) { e.printStackTrace(); }   
         return list;
