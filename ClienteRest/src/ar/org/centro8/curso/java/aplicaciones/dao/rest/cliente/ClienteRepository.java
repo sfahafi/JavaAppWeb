@@ -2,6 +2,9 @@ package ar.org.centro8.curso.java.aplicaciones.dao.rest.cliente;
 import ar.org.centro8.curso.java.aplicaciones.dao.interfaces.I_ClienteRepository;
 import ar.org.centro8.curso.java.aplicaciones.entities.Cliente;
 import ar.org.centro8.curso.java.aplicaciones.enumerados.TipoDocumento;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.lang.reflect.Type;
 import java.util.List;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -66,7 +69,7 @@ public class ClienteRepository implements I_ClienteRepository{
         
         HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(uri+"all")).build();
+                    .uri(URI.create(uri+"listJson")).build();
 
             HttpResponse<String> response = client.send(request,
                     HttpResponse.BodyHandlers.ofString());
@@ -74,31 +77,54 @@ public class ClienteRepository implements I_ClienteRepository{
             String resp = response.body();           
             //System.out.println(resp);
             
-            String[] lines = resp.split("Cliente");
-            for(String l:lines){
-                int longitud = l.length();
-                if(longitud > 0){
-                    l = l.substring(1, longitud-2);
-                    //System.out.println(l);
-                    String[] campos = l.split(", ");
-//                    for(String c: campos){
-//                        System.out.println(c);
-//                    }
-                    list.add(new Cliente(
-                            Integer.parseInt(campos[0].substring(3)),
-                            campos[1].substring(7),
-                            campos[2].substring(9),
-                            TipoDocumento.valueOf(campos[3].substring(14)),
-                            Integer.parseInt(campos[4].substring(16)),
-                            campos[5].substring(10),
-                            campos[6].substring(12)
-                    ));
-                }
-                
-            }
-            
+            Type listType = new TypeToken<List<Cliente>>(){}.getType();
+            list=new Gson().fromJson(resp, listType);
+                        
         } catch (Exception e) { e.printStackTrace(); }   
         return list;
     }
+    
+//    @Override
+//    public List<Cliente> getAll() {
+//        List<Cliente> list = new ArrayList();
+// 
+//        try {            
+//        
+//        HttpClient client = HttpClient.newHttpClient();
+//            HttpRequest request = HttpRequest.newBuilder()
+//                    .uri(URI.create(uri+"all")).build();
+//
+//            HttpResponse<String> response = client.send(request,
+//                    HttpResponse.BodyHandlers.ofString());
+//            
+//            String resp = response.body();           
+//            //System.out.println(resp);
+//            
+//            String[] lines = resp.split("Cliente");
+//            for(String l:lines){
+//                int longitud = l.length();
+//                if(longitud > 0){
+//                    l = l.substring(1, longitud-2);
+//                    //System.out.println(l);
+//                    String[] campos = l.split(", ");
+////                    for(String c: campos){
+////                        System.out.println(c);
+////                    }
+//                    list.add(new Cliente(
+//                            Integer.parseInt(campos[0].substring(3)),
+//                            campos[1].substring(7),
+//                            campos[2].substring(9),
+//                            TipoDocumento.valueOf(campos[3].substring(14)),
+//                            Integer.parseInt(campos[4].substring(16)),
+//                            campos[5].substring(10),
+//                            campos[6].substring(12)
+//                    ));
+//                }
+//                
+//            }
+//            
+//        } catch (Exception e) { e.printStackTrace(); }   
+//        return list;
+//    }
     
 }
