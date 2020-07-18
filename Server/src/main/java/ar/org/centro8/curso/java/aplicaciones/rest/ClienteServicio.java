@@ -3,12 +3,17 @@ import ar.org.centro8.curso.java.aplicaciones.connectors.Connector;
 import ar.org.centro8.curso.java.aplicaciones.dao.jdbc.ClienteRepository;
 import ar.org.centro8.curso.java.aplicaciones.entities.Cliente;
 import ar.org.centro8.curso.java.aplicaciones.enumerados.TipoDocumento;
+import com.google.gson.Gson;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
 
 @Path("clientes/v1")
 public class ClienteServicio {
+    
+    private ClienteRepository cr=new ClienteRepository(Connector.getConnection());
     
     @GET
     public String info(){
@@ -26,7 +31,6 @@ public class ClienteServicio {
             @QueryParam("direccion")String direccion,
             @QueryParam("comentarios")String comentarios
     ){
-        ClienteRepository cr=new ClienteRepository(Connector.getConnection());
         Cliente cliente=new Cliente(
                 nombre,
                 apellido,
@@ -44,7 +48,6 @@ public class ClienteServicio {
     @Path("baja")
     public String baja(@QueryParam("id")String id){
         try {
-            ClienteRepository cr=new ClienteRepository(Connector.getConnection());
             cr.remove(cr.getById(Integer.parseInt(id)));
             return "true";
         } catch (Exception e) {
@@ -57,9 +60,15 @@ public class ClienteServicio {
     @Path("all")
     public String getAll(){
         String text="";
-        ClienteRepository cr=new ClienteRepository(Connector.getConnection());
         for(Cliente c:cr.getAll()) text+=c+"\n";
         return text;
+    }
+    
+    @GET
+    @Path("listJson")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String listJson(){        
+        return new Gson().toJson(cr.getAll());
     }
         
     
@@ -67,7 +76,6 @@ public class ClienteServicio {
     @Path("likeApellido")
     public String getLikeApellido(@QueryParam("apellido") String apellido){
         String text="";
-        ClienteRepository cr=new ClienteRepository(Connector.getConnection());
         for(Cliente c: cr.getLikeApellido(apellido)) text+=c+"\n";
         return text;
     }
