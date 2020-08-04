@@ -14,7 +14,7 @@ public class DetalleRepository implements I_DetalleRepository{
     public void save(Detalle detalle) {
         if(detalle == null) return;
         try (PreparedStatement ps = conn.prepareStatement(
-                "insert into detalles (idFactura,idArticulo,precio,cantidad)"
+                "insert into detalle (idFactura,idArticulo,precio,cantidad)"
                         + "values (?,?,?,?)",
                 PreparedStatement.RETURN_GENERATED_KEYS)
             ){
@@ -33,7 +33,7 @@ public class DetalleRepository implements I_DetalleRepository{
     public void remove(Detalle detalle) {
         if(detalle == null) return;
         try (PreparedStatement ps = conn.prepareStatement(
-                "delete from detalles where idFactura=? and idArticulo=?")
+                "delete from detalle where idFactura=? and idArticulo=?")
             ){
             
             ps.setInt(1, detalle.getIdFactura());
@@ -47,7 +47,7 @@ public class DetalleRepository implements I_DetalleRepository{
     public void update(Detalle detalle) {
         if(detalle == null) return;
         try (PreparedStatement ps = conn.prepareStatement(
-                "update detalles set precio=?, cantidad=? where idFactura=? and idArticulo=?")
+                "update detalle set precio=?, cantidad=? where idFactura=? and idArticulo=?")
             ){
             
             ps.setFloat(1, detalle.getPrecio());
@@ -63,7 +63,7 @@ public class DetalleRepository implements I_DetalleRepository{
     public List<Detalle> getAll() {
         List<Detalle> list = new ArrayList();
         try (ResultSet rs = conn.createStatement().executeQuery(
-                "select * from detalles")
+                "select * from detalle")
             ){
             
             while (rs.next()){
