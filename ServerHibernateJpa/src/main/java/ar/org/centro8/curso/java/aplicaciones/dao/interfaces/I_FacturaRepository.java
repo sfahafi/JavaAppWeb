@@ -18,13 +18,13 @@ public interface I_FacturaRepository {
                 .orElse(new Factura());
     }
     
-    default Factura getByLetraNumero(Letra letra, int numero){
-        return getAll()
-                .stream()
-                .filter(f -> f.getLetra() == letra && f.getNumero() == numero)
-                .findFirst()
-                .orElse(new Factura());
-    }
+//    default Factura getByLetraNumero(Letra letra, int numero){
+//        return getAll()
+//                .stream()
+//                .filter(f -> f.getLetra() == letra && f.getNumero() == numero)
+//                .findFirst()
+//                .orElse(new Factura());
+//    }
     
     default List<Factura> getLikeFecha(String fecha){
         if (fecha == null) return new ArrayList<Factura>();

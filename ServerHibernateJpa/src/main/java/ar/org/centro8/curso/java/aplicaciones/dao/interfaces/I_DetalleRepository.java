@@ -8,29 +8,29 @@ public interface I_DetalleRepository {
     List<Detalle>getAll();
     
 
-    default Detalle getByIdDetalle(int idFactura , int idArticulo){
-        return getAll()
-                .stream()
-                .filter(d -> d.getIdFactura() == idFactura && d.getIdArticulo() == idArticulo)
-                .findFirst()
-                .orElse(new Detalle());
-    }
-    
-    default Detalle getByIdFactura(int id){
-        return getAll()
-                .stream()
-                .filter(d -> d.getIdFactura() == id)
-                .findFirst()
-                .orElse(new Detalle());
-    }
-    
-    default Detalle getByIdArticulo(int id){
-        return getAll()
-                .stream()
-                .filter(d -> d.getIdArticulo() == id)
-                .findFirst()
-                .orElse(new Detalle());
-    }
+//    default Detalle getByIdDetalle(int idFactura , int idArticulo){
+//        return getAll()
+//                .stream()
+//                .filter(d -> d.getIdFactura() == idFactura && d.getIdArticulo() == idArticulo)
+//                .findFirst()
+//                .orElse(new Detalle());
+//    }
+//    
+//    default Detalle getByIdFactura(int id){
+//        return getAll()
+//                .stream()
+//                .filter(d -> d.getIdFactura() == id)
+//                .findFirst()
+//                .orElse(new Detalle());
+//    }
+//    
+//    default Detalle getByIdArticulo(int id){
+//        return getAll()
+//                .stream()
+//                .filter(d -> d.getIdArticulo() == id)
+//                .findFirst()
+//                .orElse(new Detalle());
+//    }
     
     default Detalle getLikePrecio(float precio){
         return getAll()
