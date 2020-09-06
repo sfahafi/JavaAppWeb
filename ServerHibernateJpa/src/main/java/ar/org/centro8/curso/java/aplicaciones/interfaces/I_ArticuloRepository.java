@@ -1,4 +1,4 @@
-package ar.org.centro8.curso.java.aplicaciones.dao.interfaces;
+package ar.org.centro8.curso.java.aplicaciones.interfaces;
 import ar.org.centro8.curso.java.aplicaciones.entities.Articulo;
 import java.util.ArrayList;
 import java.util.List;

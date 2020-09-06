@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-  <persistence-unit name="JPAPU" transaction-type="RESOURCE_LOCAL">
-    <class>ar.org.centro8.curso.java.aplicaciones.entities.Factura</class>
-    <class>ar.org.centro8.curso.java.aplicaciones.entities.Cliente</class>
-    <class>ar.org.centro8.curso.java.aplicaciones.entities.Detalle</class>
-    <class>ar.org.centro8.curso.java.aplicaciones.entities.Articulo</class>
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
-    <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://remotemysql.com:3306/S36WIHK7x4?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
-      <property name="javax.persistence.jdbc.user" value="S36WIHK7x4"/>
-      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="s8Wp83GabH"/>
-      <property name="hibernate.show_sql" value="true"/>
-    </properties>
-  </persistence-unit>
+    <persistence-unit name="JPAPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>ar.org.centro8.curso.java.aplicaciones.entities.Factura</class>
+        <class>ar.org.centro8.curso.java.aplicaciones.entities.Cliente</class>
+        <class>ar.org.centro8.curso.java.aplicaciones.entities.Detalle</class>
+        <class>ar.org.centro8.curso.java.aplicaciones.entities.Articulo</class>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://remotemysql.com:3306/S36WIHK7x4?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
+            <property name="javax.persistence.jdbc.user" value="S36WIHK7x4"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.password" value="s8Wp83GabH"/>
+            <property name="hibernate.show_sql" value="true"/>
+        </properties>
+    </persistence-unit>
 </persistence>

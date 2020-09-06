@@ -1,4 +1,4 @@
-package ar.org.centro8.curso.java.aplicaciones.dao.interfaces;
+package ar.org.centro8.curso.java.aplicaciones.interfaces;
 import ar.org.centro8.curso.java.aplicaciones.entities.Detalle;
 import java.util.List;
 public interface I_DetalleRepository {

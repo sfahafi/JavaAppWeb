@@ -1,6 +1,6 @@
-package ar.org.centro8.curso.java.aplicaciones.dao.interfaces;
+package ar.org.centro8.curso.java.aplicaciones.interfaces;
 import ar.org.centro8.curso.java.aplicaciones.entities.Cliente;
-import ar.org.centro8.curso.java.aplicaciones.enumerados.TipoDocumento;
+//import ar.org.centro8.curso.java.aplicaciones.enumerados.TipoDocumento;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,14 +18,14 @@ public interface I_ClienteRepository {
                 .orElse(new Cliente());
     }
     
-//    default Cliente getByTipoNumero(TipoDocumento tipo, int numero){
-//        return getAll()
-//                .stream()
-//                .filter(c -> c.getTipoDocumento() == tipo
-//                        && c.getNumeroDocumento() == numero)
-//                .findFirst()
-//                .orElse(new Cliente());
-//    }
+    default Cliente getByTipoNumero(String tipo, String numero){
+        return getAll()
+                .stream()
+                .filter(c -> c.getTipoDocumento()== tipo
+                        && c.getNumeroDocumento() == numero)
+                .findFirst()
+                .orElse(new Cliente());
+    }
     
     default List<Cliente>getLikeApellido(String apellido){
         if (apellido == null) return new ArrayList<Cliente>();
