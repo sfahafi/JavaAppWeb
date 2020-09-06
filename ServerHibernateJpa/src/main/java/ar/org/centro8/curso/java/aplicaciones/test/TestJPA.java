@@ -10,7 +10,7 @@ public class TestJPA {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPAPU");
         EntityManager em = emf.createEntityManager();
         
-        Cliente cliente = new Cliente("Carlos", "Rios", "DNI", "12121212", "tal", "tal");
+        Cliente cliente = new Cliente("Carlos", "Luis", "DNI", "121212", "Test", "Test");
         
         em.getTransaction().begin();
         em.persist(cliente);
