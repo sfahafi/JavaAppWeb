@@ -13,15 +13,13 @@ public class TestJPA {
         System.out.println(LocalTime.now());
         EntityManager em = emf.createEntityManager();
         
-//        Cliente cliente = new Cliente("Carlos", "Luis", "DNI", "121212", "Test", "Test");
+//        Cliente cliente = new Cliente("Carlos", "Rios", "DNI", "12121212", "tal", "tal");
 //        
 //        em.getTransaction().begin();
 //        em.persist(cliente);
 //        em.getTransaction().commit();
 //        
 //        System.out.println(cliente);
-        
-        em.createNamedQuery("Cliente.findAll").getResultList().forEach(System.out::println);
         
         em.close();
         emf.close();
