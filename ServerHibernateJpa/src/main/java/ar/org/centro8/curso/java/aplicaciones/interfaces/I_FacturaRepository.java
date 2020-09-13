@@ -1,6 +1,6 @@
 package ar.org.centro8.curso.java.aplicaciones.interfaces;
 import ar.org.centro8.curso.java.aplicaciones.entities.Factura;
-//import ar.org.centro8.curso.java.aplicaciones.enumerados.Letra;
+import ar.org.centro8.curso.java.aplicaciones.enumerados.Letra;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,7 +18,7 @@ public interface I_FacturaRepository {
                 .orElse(new Factura());
     }
     
-    default Factura getByLetraNumero(char letra, int numero){
+    default Factura getByLetraNumero(Letra letra, int numero){
         return getAll()
                 .stream()
                 .filter(f -> f.getLetra() == letra && f.getNumero() == numero)

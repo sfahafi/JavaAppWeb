@@ -31,7 +31,7 @@ public class ClienteRepository implements I_ClienteRepository{
         if(cliente==null) return;
         EntityManager em=emf.createEntityManager();
         em.getTransaction().begin();
-        em.remove(cliente);
+        em.remove(em.merge(cliente));
         em.getTransaction().commit();
         em.close();
     }
@@ -41,7 +41,7 @@ public class ClienteRepository implements I_ClienteRepository{
         if(cliente==null) return;
         EntityManager em=emf.createEntityManager();
         em.getTransaction().begin();
-        em.persist(cliente);
+        em.merge(cliente);
         em.getTransaction().commit();
         em.close();
     }

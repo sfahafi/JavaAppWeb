@@ -1,9 +1,12 @@
 package ar.org.centro8.curso.java.aplicaciones.entities;
 
+import ar.org.centro8.curso.java.aplicaciones.enumerados.TipoDocumento;
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -44,7 +47,8 @@ public class Cliente implements Serializable {
     private String apellido;
     @Size(max = 4)
     @Column(name = "tipoDocumento")
-    private String tipoDocumento;
+    @Enumerated(value = EnumType.STRING)
+    private TipoDocumento tipoDocumento;
     @Size(max = 8)
     @Column(name = "numeroDocumento")
     private String numeroDocumento;
@@ -68,7 +72,7 @@ public class Cliente implements Serializable {
         this.apellido = apellido;
     }
 
-    public Cliente(String nombre, String apellido, String tipoDocumento, String numeroDocumento, String direccion, String comentarios) {
+    public Cliente(String nombre, String apellido, TipoDocumento tipoDocumento, String numeroDocumento, String direccion, String comentarios) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.tipoDocumento = tipoDocumento;
@@ -77,7 +81,7 @@ public class Cliente implements Serializable {
         this.comentarios = comentarios;
     }
 
-    public Cliente(Integer id, String nombre, String apellido, String tipoDocumento, String numeroDocumento, String direccion, String comentarios) {
+    public Cliente(Integer id, String nombre, String apellido, TipoDocumento tipoDocumento, String numeroDocumento, String direccion, String comentarios) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -113,11 +117,11 @@ public class Cliente implements Serializable {
         this.apellido = apellido;
     }
 
-    public String getTipoDocumento() {
+    public TipoDocumento getTipoDocumento() {
         return tipoDocumento;
     }
 
-    public void setTipoDocumento(String tipoDocumento) {
+    public void setTipoDocumento(TipoDocumento tipoDocumento) {
         this.tipoDocumento = tipoDocumento;
     }
 

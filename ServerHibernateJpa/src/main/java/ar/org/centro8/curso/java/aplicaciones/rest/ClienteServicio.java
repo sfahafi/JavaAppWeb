@@ -1,6 +1,6 @@
 package ar.org.centro8.curso.java.aplicaciones.rest;
 import ar.org.centro8.curso.java.aplicaciones.entities.Cliente;
-//import ar.org.centro8.curso.java.aplicaciones.enumerados.TipoDocumento;
+import ar.org.centro8.curso.java.aplicaciones.enumerados.TipoDocumento;
 import ar.org.centro8.curso.java.aplicaciones.interfaces.I_ClienteRepository;
 import ar.org.centro8.curso.java.aplicaciones.jpa.ClienteRepository;
 import com.google.gson.Gson;
@@ -17,7 +17,7 @@ public class ClienteServicio {
     
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPAPU");
     I_ClienteRepository cr = new ClienteRepository(emf);
-    
+                
     @GET
     public String info(){
         return "Servicio de clientes activo";
@@ -37,7 +37,7 @@ public class ClienteServicio {
         Cliente cliente=new Cliente(
                 nombre,
                 apellido,
-                tipoDocumento,
+                TipoDocumento.valueOf(tipoDocumento),
                 numeroDocumento,
                 direccion,
                 comentarios
@@ -59,19 +59,40 @@ public class ClienteServicio {
     }
     
         
-    @GET
-    @Path("all")
-    public String getAll(){
-        String text="";
-        for(Cliente c:cr.getAll()) text+=c+"\n";
-        return text;
-    }
+//    @GET
+//    @Path("all")
+//    public String getAll(){
+//        String text="";
+//        for(Cliente c:cr.getAll()) text+=c+"\n";
+//        return text;
+//    }
     
     @GET
-    @Path("listJson")
+    @Path("all")
     @Produces(MediaType.APPLICATION_JSON)
     public String listJson(){        
         return new Gson().toJson(cr.getAll());
+    }
+    
+    @GET
+    @Path("actualizar")
+    public String update(@QueryParam("nombre")String nombre,
+            @QueryParam("apellido")String apellido,
+            @QueryParam("tipoDocumento")String tipoDocumento,
+            @QueryParam("numeroDocumento")String numeroDocumento,
+            @QueryParam("direccion")String direccion,
+            @QueryParam("comentarios")String comentarios
+    ){
+        Cliente cliente=new Cliente(
+                nombre,
+                apellido,
+                TipoDocumento.valueOf(tipoDocumento),
+                numeroDocumento,
+                direccion,
+                comentarios
+        );        
+        cr.update(cliente);
+        return cliente.toString();        
     }
         
     

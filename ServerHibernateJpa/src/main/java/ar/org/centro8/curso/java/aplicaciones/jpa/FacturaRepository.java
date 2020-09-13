@@ -30,7 +30,7 @@ public class FacturaRepository implements I_FacturaRepository{
         if(factura==null) return;
         EntityManager em=emf.createEntityManager();
         em.getTransaction().begin();
-        em.remove(factura);
+        em.remove(em.merge(factura));
         em.getTransaction().commit();
         em.close();
     }
@@ -40,7 +40,7 @@ public class FacturaRepository implements I_FacturaRepository{
         if(factura==null) return;
         EntityManager em=emf.createEntityManager();
         em.getTransaction().begin();
-        em.persist(factura);
+        em.merge(factura);
         em.getTransaction().commit();
         em.close();
     }

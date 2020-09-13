@@ -1,6 +1,9 @@
 package ar.org.centro8.curso.java.aplicaciones.test;
 
 import ar.org.centro8.curso.java.aplicaciones.entities.Cliente;
+import ar.org.centro8.curso.java.aplicaciones.enumerados.TipoDocumento;
+import ar.org.centro8.curso.java.aplicaciones.interfaces.I_ClienteRepository;
+import ar.org.centro8.curso.java.aplicaciones.jpa.ClienteRepository;
 import java.time.LocalTime;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -12,6 +15,7 @@ public class TestJPA {
         System.out.println("***************************************");
         System.out.println(LocalTime.now());
         EntityManager em = emf.createEntityManager();
+        I_ClienteRepository cr = new ClienteRepository(emf);
         
 //        Cliente cliente = new Cliente("Carlos", "Rios", "DNI", "12121212", "tal", "tal");
 //        
@@ -20,7 +24,9 @@ public class TestJPA {
 //        em.getTransaction().commit();
 //        
 //        System.out.println(cliente);
-        
+
+        cr.getAll().forEach(System.out::println);
+                
         em.close();
         emf.close();
     }

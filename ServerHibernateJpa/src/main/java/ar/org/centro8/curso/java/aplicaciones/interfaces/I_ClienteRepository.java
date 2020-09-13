@@ -1,5 +1,6 @@
 package ar.org.centro8.curso.java.aplicaciones.interfaces;
 import ar.org.centro8.curso.java.aplicaciones.entities.Cliente;
+import ar.org.centro8.curso.java.aplicaciones.enumerados.TipoDocumento;
 //import ar.org.centro8.curso.java.aplicaciones.enumerados.TipoDocumento;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ public interface I_ClienteRepository {
                 .orElse(new Cliente());
     }
     
-    default Cliente getByTipoNumero(String tipo, String numero){
+    default Cliente getByTipoNumero(TipoDocumento tipo, String numero){
         return getAll()
                 .stream()
                 .filter(c -> c.getTipoDocumento()== tipo

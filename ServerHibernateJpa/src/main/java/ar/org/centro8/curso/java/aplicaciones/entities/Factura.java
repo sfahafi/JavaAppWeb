@@ -1,11 +1,14 @@
 package ar.org.centro8.curso.java.aplicaciones.entities;
 
+import ar.org.centro8.curso.java.aplicaciones.enumerados.Letra;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -37,7 +40,8 @@ public class Factura implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "letra")
-    private Character letra;
+    @Enumerated(value = EnumType.STRING)
+    private Letra letra;
     @Basic(optional = false)
     @NotNull
     @Column(name = "numero")
@@ -62,14 +66,14 @@ public class Factura implements Serializable {
         this.id = id;
     }
 
-    public Factura(Integer id, Character letra, int numero, int idCliente) {
+    public Factura(Integer id, Letra letra, int numero, int idCliente) {
         this.id = id;
         this.letra = letra;
         this.numero = numero;
         this.idCliente = idCliente;
     }
 
-    public Factura(Character letra, int numero, String fecha, Double monto, int idCliente) {
+    public Factura(Letra letra, int numero, String fecha, Double monto, int idCliente) {
         this.letra = letra;
         this.numero = numero;
         this.fecha = fecha;
@@ -77,7 +81,7 @@ public class Factura implements Serializable {
         this.idCliente = idCliente;
     }
 
-    public Factura(Integer id, Character letra, int numero, String fecha, Double monto, int idCliente) {
+    public Factura(Integer id, Letra letra, int numero, String fecha, Double monto, int idCliente) {
         this.id = id;
         this.letra = letra;
         this.numero = numero;
@@ -96,11 +100,11 @@ public class Factura implements Serializable {
         this.id = id;
     }
 
-    public Character getLetra() {
+    public Letra getLetra() {
         return letra;
     }
 
-    public void setLetra(Character letra) {
+    public void setLetra(Letra letra) {
         this.letra = letra;
     }
 

@@ -29,7 +29,7 @@ public class ArticuloRepository implements I_ArticuloRepository{
         if(articulo==null) return;
         EntityManager em=emf.createEntityManager();
         em.getTransaction().begin();
-        em.remove(articulo);
+        em.remove(em.merge(articulo));
         em.getTransaction().commit();
         em.close();
     }
@@ -39,7 +39,7 @@ public class ArticuloRepository implements I_ArticuloRepository{
         if(articulo==null) return;
         EntityManager em=emf.createEntityManager();
         em.getTransaction().begin();
-        em.persist(articulo);
+        em.merge(articulo);
         em.getTransaction().commit();
         em.close();
     }
