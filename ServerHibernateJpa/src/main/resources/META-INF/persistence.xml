@@ -8,10 +8,10 @@
         <class>ar.org.centro8.curso.java.aplicaciones.entities.Articulo</class>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://remotemysql.com:3306/S36WIHK7x4?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
-            <property name="javax.persistence.jdbc.user" value="S36WIHK7x4"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://db4free.net:3306/cursoweb?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
+            <property name="javax.persistence.jdbc.user" value="javawebdb"/>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.password" value="s8Wp83GabH"/>
+            <property name="javax.persistence.jdbc.password" value="4956Java"/>
             <property name="hibernate.show_sql" value="true"/>
         </properties>
     </persistence-unit>

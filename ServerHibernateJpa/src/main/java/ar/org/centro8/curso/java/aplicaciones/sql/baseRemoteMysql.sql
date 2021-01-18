@@ -1,4 +1,4 @@
-use S36WIHK7x4;
+use cursoweb;
 
 create table cliente(
     id int auto_increment primary key,
