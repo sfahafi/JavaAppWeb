@@ -11,11 +11,34 @@ public class TestRepositorioCliente {
         EntityManagerFactory emf=Persistence.createEntityManagerFactory("JPAPU");
         I_ClienteRepository cr=new ClienteRepository(emf);
         
-        Cliente cliente=new Cliente("Luis", "Guerra", TipoDocumento.PASS, "15333666", "Av Rivadavia", "Segundo Cliente");
+        System.out.println("******************************************************************************************");
+        
+        Cliente cliente=new Cliente("Luis", "Guerra", TipoDocumento.DNI, "33333666", "Av Rivadavia", "Segundo Cliente");
         cr.save(cliente);
         System.out.println(cliente);
         
+        System.out.println("******************************************************************************************");
+        
+        cr.remove(cr.getById(7));
+        
+        System.out.println("******************************************************************************************");
+        
+        cliente=cr.getById(8);
+        if(cliente != null){
+            cliente.setNombre("Julian");
+            cliente.setApellido("Fuentes");
+            cr.update(cliente);
+        }
+        
+        System.out.println("******************************************************************************************");
+
         cr.getAll().forEach(System.out::println);
+        
+        System.out.println("******************************************************************************************");
+        
+        cr.getLikeApellido("ca").forEach(System.out::println);
+                
+        System.out.println("******************************************************************************************");
         
         emf.close();
     }

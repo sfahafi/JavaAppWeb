@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "articulos")
+@Table(name = "articulo")
 @NamedQueries({
     @NamedQuery(name = "Articulo.findAll", query = "SELECT a FROM Articulo a"),
     @NamedQuery(name = "Articulo.findById", query = "SELECT a FROM Articulo a WHERE a.id = :id"),
@@ -172,7 +172,7 @@ public class Articulo implements Serializable {
 
     @Override
     public String toString() {
-        return "Articulo{" + "id=" + id + ", descripcion=" + descripcion + ", costo=" + costo + ", precio=" + precio + ", stock=" + stock + ", stockMin=" + stockMin + ", stockMax=" + stockMax + ", detalleCollection=" + detalleCollection + '}';
+        return "Articulo{" + "id=" + id + ", descripcion=" + descripcion + ", costo=" + costo + ", precio=" + precio + ", stock=" + stock + ", stockMin=" + stockMin + ", stockMax=" + stockMax + '}';
     }
 
     

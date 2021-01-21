@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "detalles")
+@Table(name = "detalle")
 @NamedQueries({
     @NamedQuery(name = "Detalle.findAll", query = "SELECT d FROM Detalle d"),
     @NamedQuery(name = "Detalle.findByIdFactura", query = "SELECT d FROM Detalle d WHERE d.detallePK.idFactura = :idFactura"),

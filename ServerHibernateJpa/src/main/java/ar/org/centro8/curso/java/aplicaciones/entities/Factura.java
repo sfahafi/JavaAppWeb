@@ -20,7 +20,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "facturas")
+@Table(name = "factura")
 @NamedQueries({
     @NamedQuery(name = "Factura.findAll", query = "SELECT f FROM Factura f"),
     @NamedQuery(name = "Factura.findById", query = "SELECT f FROM Factura f WHERE f.id = :id"),
@@ -42,8 +42,8 @@ public class Factura implements Serializable {
     @Column(name = "letra")
     @Enumerated(value = EnumType.STRING)
     private Letra letra;
-    @Basic(optional = false)
-    @NotNull
+    @Size(max = 1)
+    
     @Column(name = "numero")
     private int numero;
     @Size(max = 10)
