@@ -66,19 +66,19 @@ public class FacturaServicio {
     }
     
     @GET
-    @Path("allJson")
+    @Path("all")
     @Produces(MediaType.APPLICATION_JSON)
     public String listJson(){
         return new Gson().toJson(fr.getAll());
     }
     
-    @GET
-    @Path("all")
-    public String getAll(){
-        String text="";
-        for(Factura f:fr.getAll()) text+=f+"\n";
-        return text;
-    }
+//    @GET
+//    @Path("all")
+//    public String getAll(){
+//        String text="";
+//        for(Factura f:fr.getAll()) text+=f+"\n";
+//        return text;
+//    }
     
     @GET
     @Path("getLikeCliente")

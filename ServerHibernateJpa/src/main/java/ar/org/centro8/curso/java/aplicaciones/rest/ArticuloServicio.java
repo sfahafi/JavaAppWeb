@@ -2,11 +2,14 @@ package ar.org.centro8.curso.java.aplicaciones.rest;
 import ar.org.centro8.curso.java.aplicaciones.entities.Articulo;
 import ar.org.centro8.curso.java.aplicaciones.interfaces.I_ArticuloRepository;
 import ar.org.centro8.curso.java.aplicaciones.jpa.ArticuloRepository;
+import com.google.gson.Gson;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
 
 @Path("articulos/v1")
 public class ArticuloServicio {
@@ -52,12 +55,19 @@ public class ArticuloServicio {
         }
     }
     
+//    @GET
+//    @Path("all")
+//    public String getAll(){
+//        String text = "";
+//        for(Articulo a: ar.getAll()) text += a +"\n";
+//        return text;
+//    }
+    
     @GET
     @Path("all")
-    public String getAll(){
-        String text = "";
-        for(Articulo a: ar.getAll()) text += a +"\n";
-        return text;
+    @Produces(MediaType.APPLICATION_JSON)
+    public String listJson(){        
+        return new Gson().toJson(ar.getAll());
     }
     
     @GET
