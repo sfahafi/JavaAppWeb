@@ -8,10 +8,10 @@
         <class>ar.org.centro8.curso.java.aplicaciones.entities.Articulo</class>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://db4free.net:3306/cursoweb?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
-            <property name="javax.persistence.jdbc.user" value="javawebdb"/>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.password" value="4956Java"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:jdbc:postgres://ppavhtcdndqiwm:edb15747a8050cff6c1af2481a36fad799b2107dfdcb704e07157ef0f366acfd@ec2-52-23-45-36.compute-1.amazonaws.com:5432/d492959tme0fq1"/>
+            <property name="javax.persistence.jdbc.user" value="ppavhtcdndqiwm"/>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.jdbc.password" value="edb15747a8050cff6c1af2481a36fad799b2107dfdcb704e07157ef0f366acfd"/>
             <property name="hibernate.show_sql" value="true"/>
         </properties>
     </persistence-unit>
